@@ -1,0 +1,8 @@
+[Mon, 09 Apr 18 01:53:15 +0700][ERROR] [0]: Syntax error, unexpected token <, near to 'br LIMIT :APL0:', when parsing: SELECT [Event].* FROM [Event] WHERE <br LIMIT :APL0: (52)
+
+[Mon, 09 Apr 18 01:53:15 +0700][ERROR] [0]: Syntax error, unexpected token <, near to 'br LIMIT :APL0:', when parsing: SELECT [Event].* FROM [Event] WHERE <br LIMIT :APL0: (52)
+
+[Mon, 09 Apr 18 01:53:47 +0700][ERROR] [0]: Syntax error, unexpected token <, near to 'br LIMIT :APL0:', when parsing: SELECT [Event].* FROM [Event] WHERE <br LIMIT :APL0: (52)
+
+[Mon, 09 Apr 18 01:53:47 +0700][ERROR] [0]: Syntax error, unexpected token <, near to 'br LIMIT :APL0:', when parsing: SELECT [Event].* FROM [Event] WHERE <br LIMIT :APL0: (52)
+
