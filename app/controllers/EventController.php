@@ -24,6 +24,24 @@ class EventController extends ControllerBase{
   }
  public function editAction(){
     if($this->request->isPost()){
+
+
+
+      $photoUpdate='';
+      if($this->request->hasFiles() == true){
+        $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
+        $uploads = $this->request->getUploadedFiles();
+        $isUploaded = false;			
+        foreach($uploads as $upload){
+          if(in_array($upload->gettype(), $allowed)){					
+            $photoName=md5(uniqid(rand(), true)).strtolower($upload->getname());
+            $path = '../public/img/database/'.$photoName;
+            ($upload->moveTo($path)) ? $isUploaded = true : $isUploaded = false;
+          }
+        }
+        if($isUploaded)  $photoUpdate=$photoName ;
+      }
+
       $name = trim($this->request->getPost('name')); // รับค่าจาก form
       $date = trim($this->request->getPost('day')); // รับค่าจาก form
       $detail = trim($this->request->getPost('detail')); // รับค่าจาก form
@@ -34,7 +52,7 @@ class EventController extends ControllerBase{
       $event->name=$name;
       $event->date=$date;
       $event->detail=$detail;
-      $event->picture=$picture;
+      $event->picture=$photoName;
       $event->save();
       $this->response->redirect('event');
       }
